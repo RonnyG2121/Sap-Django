@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de administración de personas</title>
+</head>
+<body>
+    <h1>Sistema de administración de personas</h1>
+    <div>
+        Número de personas: {{num_personas}}
+    </div>
+    
+    <div>
+        <a href="nuevo/">Agregar nueva persona</a>
+    </div>
+
+    <div>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for persona in personas %}
+            <tr>
+                <td>{{persona.id}}</td>
+                <td>{{persona.nombre}} {{persona.apellido}}</td>
+                <td><a href="detalle_persona/{{persona.id}}">Ver</a></td>
+                <td><a href="editar_persona/{{persona.id}}">Editar {{persona.nombre}}</a></td>
+                <td><a href="eliminar_persona/{{persona.id}}">Eliminar {{persona.nombre}}</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <small>RG</small>
+    </footer>
+</body>
+</html>

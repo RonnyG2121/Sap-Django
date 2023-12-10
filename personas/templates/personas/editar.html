@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar persona</title>
+</head>
+<body>
+    <h1>Editar persona</h1>
+    <div>
+        <table>
+            <tbody>
+                <form method="POST">
+                    {% csrf_token %}
+                    <td>
+                        {{crea_persona}}
+                    </td>
+                    <td>
+                        <input type="submit" value="Enviar">
+
+                    </td>
+                </form>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
